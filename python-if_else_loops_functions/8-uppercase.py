@@ -7,4 +7,5 @@ def islower(c):
 
 def uppercase(s):
     offset = ord('A') - ord('a')
-    print(''.join(chr(ord(c) + offset) if 'a' <= c <= 'z' else c for c in s))
+    result = ''.join(chr(ord(c) + offset) if 'a' <= c <= 'z' else c for c in s)
+    print("{:s}".format(result))
