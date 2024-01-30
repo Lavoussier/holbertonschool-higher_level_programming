@@ -12,4 +12,3 @@ if __name__ == "__main__":
 
         for index, argument in enumerate(argv[1:], start=1):
             print("{}: {}".format(index, argument))
-
