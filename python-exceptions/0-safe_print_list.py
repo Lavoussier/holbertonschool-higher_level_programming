@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def safe_print_list(my_list=[], x=0):
     try:
         for i in range(x):
@@ -7,5 +6,5 @@ def safe_print_list(my_list=[], x=0):
         print("")
     except IndexError:
         print("")
-        return i + 1 if i < len(my_list) else i
+        return i if i < len(my_list) else i + 1
     return x
