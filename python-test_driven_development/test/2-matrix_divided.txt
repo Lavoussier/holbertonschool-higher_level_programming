@@ -1,0 +1,69 @@
+The "2-matrix_divided" Module
+===========================
+
+Using "matrix_divided"
+-----------------------
+This test document is based on 2-matrix_divided.py. Each '>>' line is executed as if in a Python shell, serving as a test. The following line, if not starting with '>>', represents the expected output of the preceding line. Any deviation, including trailing spaces, results in a test failure.
+
+Import the function:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test: Matrix with lists of positive integers. Div as a positive integer.
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test: Matrix with lists of positive integers. Div as a negative integer.
+    >>> matrix_divided([[1, 2], [3, 4]], -3)
+    [[-0.33, -0.67], [-1.0, -1.33]]
+
+Test: Matrix with lists of floats. Div as a positive integer.
+    >>> matrix_divided([[1.0, 2.3], [3.5, 4.6]], 3)
+    [[0.33, 0.77], [1.17, 1.53]]
+
+Test: Matrix with lists of positive integers. No div.
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test: Empty matrix. Div as a positive integer.
+    >>> matrix_divided([], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix as 'None'. Div as a positive integer.
+    >>> matrix_divided([None], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix as a positive integer. Div as a positive integer.
+    >>> matrix_divided(100, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix as a list. Div as a positive integer.
+    >>> matrix_divided([100, 20], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix with lists of strings. Div as a positive integer.
+    >>> matrix_divided([["Hello", "i"], ["am", "string"]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix with lists of different types. Div as a positive integer.
+    >>> matrix_divided([[1, 2], [3, "string"]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test: Matrix with lists of integers of different sizes. Div as a positive integer.
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
