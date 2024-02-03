@@ -6,7 +6,7 @@ class Square:
     """Square class that defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Instantiation with optional size and position"""
+        """Instantiation with optional size and optional position"""
         self.size = size
         self.position = position
 
@@ -43,11 +43,15 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Public instance method that prints the square with the char #"""
+        """Public instance method that prints the square with the character #"""
         if self.__size == 0:
             print("")
             return
+
         rows, cols = self.__position[1], self.__position[0]
-        print("\n" * rows, end="")
+
+        for _ in range(rows):
+            print("")
+
         for _ in range(self.__size):
             print(" " * cols + "#" * self.__size)
