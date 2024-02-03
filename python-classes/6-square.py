@@ -3,7 +3,7 @@
 
 
 class Square:
-    """class Square that defines a square"""
+    """Square class that defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
         """Instantiation with optional size and position"""
@@ -20,10 +20,9 @@ class Square:
         """Property setter for size"""
         if not isinstance(value, int):
             raise TypeError("Size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("Size must be >= 0")
-        else:
-            self.__size = value
+        self.__size = value
 
     @property
     def position(self):
@@ -35,10 +34,9 @@ class Square:
         """Property setter for position"""
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("Position must be a tuple of 2 positive integers")
-        elif not all(isinstance(coord, int) and coord >= 0 for coord in value):
+        if not all(isinstance(coord, int) and coord >= 0 for coord in value):
             raise TypeError("Position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def area(self):
         """Public instance method that returns the square area"""
@@ -49,7 +47,6 @@ class Square:
         if self.__size == 0:
             print("")
             return
-
         rows, cols = self.__position[1], self.__position[0]
         print("\n" * rows, end="")
         for _ in range(self.__size):
