@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def matrix_divided(matrix, div):
     """Function that divides all elements of a matrix."""
     if not all(isinstance(row, list) and all(isinstance(elem, (int, float)) for elem in row) for row in matrix):
